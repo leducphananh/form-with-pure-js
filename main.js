@@ -48,9 +48,9 @@ const renderUI = (listUsers) => {
                 <td>${user.description}</td>
                 <td>${user.level}</td>
                 <td>
-                    <a href=""  id="edit-button-${user.id}">Edit</a>
-                     | 
-                    <a href=""  id="delete-button-${user.id}">Delete</a>
+                    <a href="" id="edit-button-${user.id}">Edit</a>
+                    &nbsp;&nbsp;
+                    <a href="" id="delete-button-${user.id}">Delete</a>
                 </td>
             </tr>`
     }, '');
