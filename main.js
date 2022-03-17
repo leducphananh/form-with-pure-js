@@ -122,7 +122,7 @@ for (let i = 0; i < listUsers.length; i++) {
         e.preventDefault();
         document.getElementById('id').value = user.id;
         document.getElementById('name').value = user.name;
-        if (user.gender === 'male') {
+        if (user.gender === 'Male') {
             document.querySelector('input[id="male"]').checked = true;
         } else {
             document.querySelector('input[id="female"]').checked = true;
@@ -137,6 +137,8 @@ for (let i = 0; i < listUsers.length; i++) {
         for (let i = 0; i < inputCheckboxElements.length; i++) {
             if (checkedValue.includes(inputCheckboxElements[i].value)) {
                 inputCheckboxElements[i].checked = true;
+            } else {
+                inputCheckboxElements[i].checked = false;
             }
         }
         submitButtonElement.classList.add('btn-inactive');
