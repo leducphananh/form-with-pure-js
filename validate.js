@@ -43,8 +43,6 @@ function Validator(options) {
             });
             if (isFormValid) {
                 submitForm();
-            } else {
-                console.log('Có lỗi');
             }
         }
 

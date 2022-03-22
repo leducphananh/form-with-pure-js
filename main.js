@@ -18,11 +18,7 @@ class User {
     }
 }
 
-let listUsers = [];
-// console.log(localStorage.getItem('listUsers'))
-if (localStorage.getItem('listUsers') != null) {
-    listUsers = JSON.parse(localStorage.getItem('listUsers'));
-}
+let listUsers = localStorage.getItem('listUsers') ? JSON.parse(localStorage.getItem('listUsers')) : [];
 
 const hadId = (id) => {
     return listUsers.some((user) => user.id === id);
@@ -120,18 +116,18 @@ for (let i = 0; i < listUsers.length; i++) {
     // Add event for edit button
     editButtonElement.onclick = (e) => {
         e.preventDefault();
-        document.getElementById('id').value = user.id;
-        document.getElementById('name').value = user.name;
+        document.getElementById('id').value = user.id || '';
+        document.getElementById('name').value = user.name || '';
         if (user.gender === 'Male') {
             document.querySelector('input[id="male"]').checked = true;
         } else {
             document.querySelector('input[id="female"]').checked = true;
         }
-        document.getElementById('dob').value = user.dob;
-        document.getElementById('phone').value = user.phone;
-        document.getElementById('email').value = user.email;
-        document.getElementById('address').value = user.address;
-        document.getElementById('description').value = user.description;
+        document.getElementById('dob').value = user.dob || '';
+        document.getElementById('phone').value = user.phone || '';
+        document.getElementById('email').value = user.email || '';
+        document.getElementById('address').value = user.address || '';
+        document.getElementById('description').value = user.description || '';
         let inputCheckboxElements = document.querySelectorAll('input[name="level"]');
         let checkedValue = user.level.split(', ');
         for (let i = 0; i < inputCheckboxElements.length; i++) {
